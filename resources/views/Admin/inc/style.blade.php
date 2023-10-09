@@ -1,21 +1,28 @@
-<!-- Standard -->
-<link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
-<!-- Retina iPad Touch Icon-->
-<link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
-<!-- Retina iPhone Touch Icon-->
-<link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
-<!-- Standard iPad Touch Icon-->
-<link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
-<!-- Standard iPhone Touch Icon-->
-<link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
-<!-- Styles -->
-<link href="{{ asset('assets/css/lib/chartist/chartist.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/lib/font-awesome.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/lib/themify-icons.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('assets/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('assets/css/lib/weather-icons.css') }}" rel="stylesheet" />
-<link href="{{ asset('assets/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/lib/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/lib/unix.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+<!-- Icons -->
+<!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+<link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('img/icon57.png') }}" sizes="57x57">
+<link rel="apple-touch-icon" href="{{ asset('img/icon72.png') }}" sizes="72x72">
+<link rel="apple-touch-icon" href="{{ asset('img/icon76.png') }}" sizes="76x76">
+<link rel="apple-touch-icon" href="{{ asset('img/icon114.png') }}" sizes="114x114">
+<link rel="apple-touch-icon" href="{{ asset('img/icon120.png') }}" sizes="120x120">
+<link rel="apple-touch-icon" href="{{ asset('img/icon144.png') }}" sizes="144x144">
+<link rel="apple-touch-icon" href="{{ asset('img/icon152.png') }}" sizes="152x152">
+<link rel="apple-touch-icon" href="{{ asset('img/icon180.png') }}" sizes="180x180">
+<!-- END Icons -->
+
+<!-- Stylesheets -->
+<!-- Bootstrap is included in its original form, unaltered -->
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+
+<!-- Related styles of various icon packs and plugins -->
+<link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+
+<!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+<!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+
+<!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+<link rel="stylesheet" href="{{ asset('css/themes.css') }}">
+<!-- END Stylesheets -->
