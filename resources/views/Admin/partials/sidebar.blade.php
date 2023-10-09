@@ -16,7 +16,7 @@
                         <img src="{{ asset('img/placeholders/avatars/avatar2.jpg') }}" alt="avatar">
                     </a>
                 </div>
-                <div class="sidebar-user-name">John Doe</div>
+                <div class="sidebar-user-name">{{ auth()->user()->name }}</div>
                 <div class="sidebar-user-links">
                     <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom"
                        title="Profile"><i class="gi gi-user"></i></a>
@@ -25,8 +25,13 @@
                     <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
                     <a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings"
                        onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
-                    <a href="login.html" data-toggle="tooltip" data-placement="bottom" title="Logout"><i
-                            class="gi gi-exit"></i></a>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+
                 </div>
             </div>
             <!-- END User Info -->
