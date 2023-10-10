@@ -1,266 +1,80 @@
 <!DOCTYPE html>
-<!--[if IE 9]>
-<html class="no-js lt-ie10" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>ProUI - Responsive Bootstrap Admin Template</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ asset('assets/styles/style.min.css') }}">
 
-    <meta name="description"
-          content="ProUI is a Responsive Bootstrap Admin Template created by pixelcave and published on Themeforest.">
-    <meta name="author" content="pixelcave">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="{{ asset('assets/plugin/waves/waves.min.css') }}">
 
-    <!-- Icons -->
-    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="img/icon57.png" sizes="57x57">
-    <link rel="apple-touch-icon" href="img/icon72.png" sizes="72x72">
-    <link rel="apple-touch-icon" href="img/icon76.png" sizes="76x76">
-    <link rel="apple-touch-icon" href="img/icon114.png" sizes="114x114">
-    <link rel="apple-touch-icon" href="img/icon120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="img/icon144.png" sizes="144x144">
-    <link rel="apple-touch-icon" href="img/icon152.png" sizes="152x152">
-    <link rel="apple-touch-icon" href="img/icon180.png" sizes="180x180">
-    <!-- END Icons -->
-
-    <!-- Stylesheets -->
-    <!-- Bootstrap is included in its original form, unaltered -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Related styles of various icon packs and plugins -->
-    <link rel="stylesheet" href="css/plugins.css">
-
-    <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
-
-    <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
-    <link rel="stylesheet" href="css/themes.css">
-    <!-- END Stylesheets -->
-
-    <!-- Modernizr (browser feature detection library) -->
-    <script src="js/vendor/modernizr.min.js"></script>
 </head>
+
 <body>
-<!-- Login Full Background -->
-<!-- For best results use an image with a resolution of 1280x1280 pixels (prefer a blurred image for smaller file size) -->
-<img src="img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background"
-     class="full-bg animation-pulseSlow">
-<!-- END Login Full Background -->
 
-<!-- Login Container -->
-<div id="login-container" class="animation-fadeIn">
-    <!-- Login Title -->
-    <div class="login-title text-center">
-        <h1><i class="gi gi-flash"></i> <strong>ProUI</strong><br><small>Please <strong>Login</strong> or <strong>Register</strong></small>
-        </h1>
-    </div>
-    <!-- END Login Title -->
-
-    <!-- Login Block -->
-    <div class="block push-bit">
-        <!-- Login Form -->
-        <form action="{{ route('login') }}" method="post" id="form-login"
-              class="form-horizontal form-bordered form-control-borderless">
-            @csrf
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                        <input type="text" id="login-email" name="email" class="form-control input-lg"
-                               placeholder="Email">
+<div id="single-wrapper">
+    <form action="{{ route('login') }}" method="post" class="frm-single">
+        @csrf
+        <div class="inside">
+            <div class="title"><strong>LET's </strong>Folio</div>
+            <!-- /.title -->
+            <div class="frm-title">Login</div>
+                <!-- /.frm-title -->
+                <div class="frm-input"><input type="email" placeholder="Email" name="email" class="frm-inp"><i class="fa fa-user frm-ico"></i></div>
+                <!-- /.frm-input -->
+                <div class="frm-input"><input type="password" placeholder="Password" name="password" class="frm-inp"><i class="fa fa-lock frm-ico"></i></div>
+                <!-- /.frm-input -->
+                <div class="clearfix margin-bottom-20">
+                    <div class="pull-left">
+                        <div class="checkbox primary"><input type="checkbox" id="rememberme"><label for="rememberme">Remember me</label></div>
+                        <!-- /.checkbox -->
                     </div>
+                    <!-- /.pull-left -->
+                    <div class="pull-right"><a href="page-recoverpw.html" class="a-link"><i class="fa fa-unlock-alt"></i>Forgot password?</a></div>
+                    <!-- /.pull-right -->
                 </div>
+                <!-- /.clearfix -->
+                <button type="submit" class="frm-submit">Login<i class="fa fa-arrow-circle-right"></i></button>
+            <div class="row small-spacing">
+                <div class="col-sm-12">
+                    <div class="txt-login-with txt-center">or login with</div>
+                    <!-- /.txt-login-with -->
+                </div>
+                <!-- /.col-sm-12 -->
+                <div class="col-sm-6"><button type="button" class="btn btn-sm btn-icon btn-icon-left btn-social-with-text btn-facebook text-white waves-effect waves-light"><i class="ico fa fa-facebook"></i><span>Facebook</span></button></div>
+                <!-- /.col-sm-6 -->
+                <div class="col-sm-6"><button type="button" class="btn btn-sm btn-icon btn-icon-left btn-social-with-text btn-google-plus text-white waves-effect waves-light"><i class="ico fa fa-google-plus"></i>Google+</button></div>
+                <!-- /.col-sm-6 -->
             </div>
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                        <input type="password" id="login-password" name="password" class="form-control input-lg"
-                               placeholder="Password">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group form-actions">
-                <div class="col-xs-4">
-                    <label class="switch switch-primary" data-toggle="tooltip" title="Remember Me?">
-                        <input type="checkbox" id="login-remember-me" name="login-remember-me" checked>
-                        <span></span>
-                    </label>
-                </div>
-                <div class="col-xs-8 text-right">
-                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Login to
-                        Dashboard
-                    </button>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12 text-center">
-                    <a href="javascript:void(0)" id="link-reminder-login"><small>Forgot password?</small></a> -
-                    <a href="javascript:void(0)" id="link-register-login"><small>Create a new account</small></a>
-                </div>
-            </div>
-        </form>
-        <!-- END Login Form -->
-
-        <!-- Reminder Form -->
-        <form action="login_full.html#reminder" method="post" id="form-reminder"
-              class="form-horizontal form-bordered form-control-borderless display-none">
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                        <input type="text" id="reminder-email" name="reminder-email" class="form-control input-lg"
-                               placeholder="Email">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group form-actions">
-                <div class="col-xs-12 text-right">
-                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Reset
-                        Password
-                    </button>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12 text-center">
-                    <small>Did you remember your password?</small> <a href="javascript:void(0)"
-                                                                      id="link-reminder"><small>Login</small></a>
-                </div>
-            </div>
-        </form>
-        <!-- END Reminder Form -->
-
-        <!-- Register Form -->
-        <form action="{{ route('register') }}" method="post" id="form-register"
-              class="form-horizontal form-bordered form-control-borderless display-none">
-            @csrf
-            <div class="form-group">
-                <div class="col-xs-12">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="gi gi-user"></i></span>
-                    <input type="text" id="register-firstname" name="name" class="form-control input-lg"
-                           placeholder="Full Name">
-                </div>
-                </div>
-
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                        <input type="text" id="register-email" name="email" class="form-control input-lg"
-                               placeholder="Email">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                        <input type="password" id="register-password" name="password"
-                               class="form-control input-lg" placeholder="Password">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                        <input type="password" id="register-password-verify" name="password_confirmation"
-                               class="form-control input-lg" placeholder="Verify Password">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group form-actions">
-                <div class="col-xs-6">
-                    <a href="#modal-terms" data-toggle="modal" class="register-terms">Terms</a>
-                    <label class="switch switch-primary" data-toggle="tooltip" title="Agree to the terms">
-                        <input type="checkbox" id="register-terms" name="register-terms">
-                        <span></span>
-                    </label>
-                </div>
-                <div class="col-xs-6 text-right">
-                    <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Register Account
-                    </button>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12 text-center">
-                    <small>Do you have an account?</small> <a href="javascript:void(0)"
-                                                              id="link-register"><small>Login</small></a>
-                </div>
-            </div>
-        </form>
-        <!-- END Register Form -->
-    </div>
-    <!-- END Login Block -->
-</div>
-<!-- END Login Container -->
-
-<!-- Modal Terms -->
-<div id="modal-terms" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Terms &amp; Conditions</h4>
-            </div>
-            <div class="modal-body">
-                <h4>Title</h4>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <h4>Title</h4>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <h4>Title</h4>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+            <!-- /.row -->
+            <a href="{{ route('register') }}" class="a-link"><i class="fa fa-key"></i>New to LET's Folio?  Register.</a>
+            <div class="frm-footer">NinjaAdmin © 2016.</div>
+            <!-- /.footer -->
         </div>
-    </div>
-</div>
-<!-- END Modal Terms -->
+        <!-- .inside -->
+    </form>
+    <!-- /.frm-single -->
+</div><!--/#single-wrapper -->
 
-<!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
-<script src="js/vendor/jquery.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/app.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="{{ asset('assets/script/html5shiv.min.js') }}"></script>
+<script src="{{ asset('assets/script/respond.min.js') }}"></script>
+<![endif]-->
+<!--
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ asset('assets/scripts/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/scripts/modernizr.min.js') }}"></script>
+<script src="{{ asset('assets/plugin/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugin/nprogress/nprogress.js') }}"></script>
+<script src="{{ asset('assets/plugin/waves/waves.min.js') }}"></script>
 
-<!-- Load and execute javascript code used only in this page -->
-<script src="js/pages/login.js"></script>
-<script>$(function () {
-        Login.init();
-    });</script>
+<script src="{{ asset('assets/scripts/main.min.js') }}"></script>
 </body>
 </html>

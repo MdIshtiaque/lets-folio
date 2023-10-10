@@ -1,129 +1,52 @@
-<header class="navbar navbar-default">
-    <!-- Left Header Navigation -->
-    <ul class="nav navbar-nav-custom">
-        <!-- Main Sidebar Toggle Button -->
-        <li>
-            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
-                <i class="fa fa-bars fa-fw"></i>
-            </a>
-        </li>
-        <!-- END Main Sidebar Toggle Button -->
-
-        <!-- Template Options -->
-        <!-- Change Options functionality can be found in js/app.js - templateOptions() -->
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="gi gi-settings"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-custom dropdown-options">
-                <li class="dropdown-header text-center">Header Style</li>
-                <li>
-                    <div class="btn-group btn-group-justified btn-group-sm">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="options-header-default">Light</a>
-                        <a href="javascript:void(0)" class="btn btn-primary" id="options-header-inverse">Dark</a>
-                    </div>
-                </li>
-                <li class="dropdown-header text-center">Page Style</li>
-                <li>
-                    <div class="btn-group btn-group-justified btn-group-sm">
-                        <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style">Default</a>
-                        <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style-alt">Alternative</a>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <!-- END Template Options -->
-    </ul>
-    <!-- END Left Header Navigation -->
-
-    <!-- Search Form -->
-    <form action="page_ready_search_results.html" method="post" class="navbar-form-custom">
-        <div class="form-group">
-            <input type="text" id="top-search" name="top-search" class="form-control" placeholder="Search..">
+<div class="fixed-navbar">
+    <div class="pull-left">
+        <button type="button" class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
+        <h1 class="page-title">Home</h1>
+        <!-- /.page-title -->
+    </div>
+    <!-- /.pull-left -->
+    <div class="pull-right">
+        <div class="ico-item">
+            <a href="#" class="ico-item fa fa-search js__toggle_open" data-target="#searchform-header"></a>
+            <form action="#" id="searchform-header" class="searchform js__toggle"><input type="search" placeholder="Search..." class="input-search"><button class="fa fa-search button-search" type="submit"></button></form>
+            <!-- /.searchform -->
         </div>
-    </form>
-    <!-- END Search Form -->
+        <!-- /.ico-item -->
+        <div class="ico-item fa fa-arrows-alt js__full_screen"></div>
+        <!-- /.ico-item fa fa-fa-arrows-alt -->
+        <div class="ico-item toggle-hover js__drop_down ">
+            <span class="fa fa-th js__drop_down_button"></span>
+            <div class="toggle-content">
+                <ul>
+                    <li><a href="#"><i class="fa fa-github"></i><span class="txt">Github</span></a></li>
+                    <li><a href="#"><i class="fa fa-bitbucket"></i><span class="txt">Bitbucket</span></a></li>
+                    <li><a href="#"><i class="fa fa-slack"></i><span class="txt">Slack</span></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i><span class="txt">Dribbble</span></a></li>
+                    <li><a href="#"><i class="fa fa-amazon"></i><span class="txt">Amazon</span></a></li>
+                    <li><a href="#"><i class="fa fa-dropbox"></i><span class="txt">Dropbox</span></a></li>
+                </ul>
+                <a href="#" class="read-more">More</a>
+            </div>
+            <!-- /.toggle-content -->
+        </div>
+        <!-- /.ico-item -->
+        <a href="#" class="ico-item fa fa-envelope notice-alarm js__toggle_open" data-target="#message-popup"></a>
+        <a href="#" class="ico-item pulse"><span class="ico-item fa fa-bell notice-alarm js__toggle_open" data-target="#notification-popup"></span></a>
+        <a href="{{ route('profile.edit') }}" style="padding-left: 20px"><span style="color: black"><strong>Hi, {{ auth()->user()->name }}</strong></span></a>
 
-    <!-- Right Header Navigation -->
-    <ul class="nav navbar-nav-custom pull-right">
-        <!-- Alternative Sidebar Toggle Button -->
-        <li>
-            <!-- If you do not want the main sidebar to open when the alternative sidebar is closed, just remove the second parameter: App.sidebar('toggle-sidebar-alt'); -->
-            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');this.blur();">
-                <i class="gi gi-share_alt"></i>
-                <span class="label label-primary label-indicator animation-floating">4</span>
-            </a>
-        </li>
-        <!-- END Alternative Sidebar Toggle Button -->
-
-        <!-- User Dropdown -->
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                <li class="dropdown-header text-center">Account</li>
-                <li>
-                    <a href="page_ready_timeline.html">
-                        <i class="fa fa-clock-o fa-fw pull-right"></i>
-                        <span class="badge pull-right">10</span>
-                        Updates
-                    </a>
-                    <a href="page_ready_inbox.html">
-                        <i class="fa fa-envelope-o fa-fw pull-right"></i>
-                        <span class="badge pull-right">5</span>
-                        Messages
-                    </a>
-                    <a href="page_ready_pricing_tables.html"><i class="fa fa-magnet fa-fw pull-right"></i>
-                        <span class="badge pull-right">3</span>
-                        Subscriptions
-                    </a>
-                    <a href="page_ready_faq.html"><i class="fa fa-question fa-fw pull-right"></i>
-                        <span class="badge pull-right">11</span>
-                        FAQ
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="page_ready_user_profile.html">
-                        <i class="fa fa-user fa-fw pull-right"></i>
-                        Profile
-                    </a>
-                    <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
-                    <a href="#modal-user-settings" data-toggle="modal">
-                        <i class="fa fa-cog fa-fw pull-right"></i>
-                        Settings
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="page_ready_lock_screen.html"><i class="fa fa-lock fa-fw pull-right"></i> Lock Account</a>
-                    <a href="login.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
-                </li>
-                <li class="dropdown-header text-center">Activity</li>
-                <li>
-                    <div class="alert alert-success alert-alt">
-                        <small>5 min ago</small><br>
-                        <i class="fa fa-thumbs-up fa-fw"></i> You had a new sale ($10)
-                    </div>
-                    <div class="alert alert-info alert-alt">
-                        <small>10 min ago</small><br>
-                        <i class="fa fa-arrow-up fa-fw"></i> Upgraded to Pro plan
-                    </div>
-                    <div class="alert alert-warning alert-alt">
-                        <small>3 hours ago</small><br>
-                        <i class="fa fa-exclamation fa-fw"></i> Running low on space<br><strong>18GB in use</strong> 2GB
-                        left
-                    </div>
-                    <div class="alert alert-danger alert-alt">
-                        <small>Yesterday</small><br>
-                        <i class="fa fa-bug fa-fw"></i> <a href="javascript:void(0)" class="alert-link">New bug
-                            submitted</a>
-                    </div>
-                </li>
+        <div class="ico-item">
+            <img src="http://placehold.it/80x80" alt="" class="ico-img">
+            <ul class="sub-ico-item">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a></li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </ul>
-        </li>
-        <!-- END User Dropdown -->
-    </ul>
-    <!-- END Right Header Navigation -->
-</header>
+            <!-- /.sub-ico-item -->
+        </div>
+        <!-- /.ico-item -->
+    </div>
+    <!-- /.pull-right -->
+</div>
