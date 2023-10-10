@@ -1,485 +1,131 @@
-<div id="sidebar">
-    <!-- Wrapper for scrolling functionality -->
-    <div id="sidebar-scroll">
-        <!-- Sidebar Content -->
-        <div class="sidebar-content">
-            <!-- Brand -->
-            <a href="index.html" class="sidebar-brand">
-                <i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong>Let's</strong> FOLIO</span>
-            </a>
-            <!-- END Brand -->
+<div class="main-menu">
+    <header class="header">
+        <a href="index.html" class="logo">LET's Folio</a>
+        <button type="button" class="button-close fa fa-times js__menu_close"></button>
+    </header>
+    <!-- /.header -->
+    <div class="content">
 
-            <!-- User Info -->
-            <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
-                <div class="sidebar-user-avatar">
-                    <a href="page_ready_user_profile.html">
-                        <img src="{{ asset('img/placeholders/avatars/avatar2.jpg') }}" alt="avatar">
-                    </a>
-                </div>
-                <div class="sidebar-user-name">{{ auth()->user()->name }}</div>
-                <div class="sidebar-user-links">
-                    <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom"
-                       title="Profile"><i class="gi gi-user"></i></a>
-                    <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i
-                            class="gi gi-envelope"></i></a>
-                    <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
-                    <a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings"
-                       onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-
-
-                </div>
-            </div>
-            <!-- END User Info -->
-
-            <!-- Theme Colors -->
-            <!-- Change Color Theme functionality can be found in js/app.js - templateOptions() -->
-{{--            <ul class="sidebar-section sidebar-themes clearfix sidebar-nav-mini-hide">--}}
-{{--                <!-- You can also add the default color theme--}}
-{{--                <li class="active">--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-default themed-border-default" data-theme="default" data-toggle="tooltip" title="Default Blue"></a>--}}
-{{--                </li>--}}
-{{--                -->--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-night themed-border-night"--}}
-{{--                       data-theme="{{ asset('css/themes/night.css') }}" data-toggle="tooltip" title="Night"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-amethyst themed-border-amethyst"--}}
-{{--                       data-theme="{{ asset('css/themes/amethyst.css') }}" data-toggle="tooltip" title="Amethyst"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-modern themed-border-modern"--}}
-{{--                       data-theme="{{ asset('css/themes/modern.css') }}" data-toggle="tooltip" title="Modern"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-autumn themed-border-autumn"--}}
-{{--                       data-theme="{{ asset('css/themes/autumn.css') }}" data-toggle="tooltip" title="Autumn"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-flatie themed-border-flatie"--}}
-{{--                       data-theme="{{ asset('css/themes/flatie.css') }}" data-toggle="tooltip" title="Flatie"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-spring themed-border-spring"--}}
-{{--                       data-theme="{{ asset('css/themes/spring.css') }}" data-toggle="tooltip" title="Spring"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-fancy themed-border-fancy"--}}
-{{--                       data-theme="{{ asset('css/themes/fancy.css') }}" data-toggle="tooltip" title="Fancy"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-fire themed-border-fire"--}}
-{{--                       data-theme="{{ asset('css/themes/fire.css') }}" data-toggle="tooltip" title="Fire"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-coral themed-border-coral"--}}
-{{--                       data-theme="{{ asset('css/themes/coral.css') }}" data-toggle="tooltip" title="Coral"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-lake themed-border-lake"--}}
-{{--                       data-theme="{{ asset('css/themes/lake.css') }}" data-toggle="tooltip" title="Lake"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-forest themed-border-forest"--}}
-{{--                       data-theme="{{ asset('css/themes/forest.css') }}" data-toggle="tooltip" title="Forest"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-waterlily themed-border-waterlily"--}}
-{{--                       data-theme="{{ asset('css/themes/waterlily.css') }}" data-toggle="tooltip" title="Waterlily"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-emerald themed-border-emerald"--}}
-{{--                       data-theme="{{ asset('css/themes/emerald.css') }}" data-toggle="tooltip" title="Emerald"></a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="javascript:void(0)" class="themed-background-dark-blackberry themed-border-blackberry"--}}
-{{--                       data-theme="{{ asset('css/themes/blackberry.css') }}" data-toggle="tooltip"--}}
-{{--                       title="Blackberry"></a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-            <!-- END Theme Colors -->
-
-            <!-- Sidebar Navigation -->
-            <ul class="sidebar-nav">
-                <li>
-                    <a href="{{ route('admin.dashboard') }}" class=" active"><i class="gi gi-leaf sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Dashboard</span></a>
-                </li>
-
-                <li class="sidebar-header">
-                    <span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip"
-                                                                     title="Quick Settings"><i
-                                class="gi gi-settings"></i></a><a href="javascript:void(0)" data-toggle="tooltip"
-                                                                  title="Create the most amazing pages with the widget kit!"><i
-                                class="gi gi-lightbulb"></i></a></span>
-                    <span class="sidebar-header-title">Widget Kit</span>
+        <div class="navigation">
+            <ul class="menu js__accordion">
+                <li class="current">
+                    <a class="waves-effect" href="index.html"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Statistics</span></a>
-                </li>
-                <li>
-                    <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Social</span></a>
-                </li>
-                <li>
-                    <a href="page_widgets_media.html"><i class="gi gi-film sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Media</span></a>
-                </li>
-                <li>
-                    <a href="page_widgets_links.html"><i class="gi gi-link sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Links</span></a>
-                </li>
-                <li class="sidebar-header">
-                    <span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip"
-                                                                     title="Quick Settings"><i
-                                class="gi gi-settings"></i></a></span>
-                    <span class="sidebar-header-title">Design Kit</span>
-                </li>
-                <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-certificate sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">User Interface</span></a>
-                    <ul>
-                        <li>
-                            <a href="page_ui_grid_blocks.html">Grid &amp; Blocks</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_draggable_blocks.html">Draggable Blocks</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_typography.html">Typography</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_buttons_dropdowns.html">Buttons &amp; Dropdowns</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_navigation_more.html">Navigation &amp; More</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_horizontal_menu.html">Horizontal Menu</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_progress_loading.html">Progress &amp; Loading</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_preloader.html">Page Preloader</a>
-                        </li>
-                        <li>
-                            <a href="page_ui_color_themes.html">Color Themes</a>
-                        </li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-flower"></i><span>Icons</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="icons-font-awesome-icons.html">Font Awesome</a></li>
+                        <li><a href="icons-fontello.html">Fontello</a></li>
+                        <li><a href="icons-material-icons.html">Material Design Icons</a></li>
+                        <li><a href="icons-material-design-iconic.html">Material Design Iconic Font</a></li>
+                        <li><a href="icons-themify-icons.html">Themify Icons</a></li>
                     </ul>
+                    <!-- /.sub-menu js__content -->
                 </li>
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-notes_2 sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Forms</span></a>
-                    <ul>
-                        <li>
-                            <a href="page_forms_general.html">General</a>
-                        </li>
-                        <li>
-                            <a href="page_forms_components.html">Components</a>
-                        </li>
-                        <li>
-                            <a href="page_forms_validation.html">Validation</a>
-                        </li>
-                        <li>
-                            <a href="page_forms_wizard.html">Wizard</a>
-                        </li>
-                    </ul>
+                    <a class="waves-effect" href="calendar.html"><i class="menu-icon mdi mdi-calendar-multiple"></i><span>Calendar</span><span class="notice notice-danger">New</span></a>
                 </li>
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-table sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Tables</span></a>
-                    <ul>
-                        <li>
-                            <a href="page_tables_general.html">General</a>
-                        </li>
-                        <li>
-                            <a href="page_tables_responsive.html">Responsive</a>
-                        </li>
-                        <li>
-                            <a href="page_tables_datatables.html">Datatables</a>
-                        </li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-chart-bar"></i><span>Charts</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="chart-3d.html">3D Charts</a></li>
+                        <li><a href="chart-chartist.html">Chartist Charts</a></li>
+                        <li><a href="chart-chartjs.html">Chartjs Chart</a></li>
+                        <li><a href="chart-dynamic.html">Dynamic Chart</a></li>
+                        <li><a href="chart-flot.html">Flot Chart</a></li>
+                        <li><a href="chart-knob.html">Knob Chart</a></li>
+                        <li><a href="chart-morris.html">Morris Chart</a></li>
+                        <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
+                        <li><a href="chart-other.html">Other Chart</a></li>
                     </ul>
+                    <!-- /.sub-menu js__content -->
                 </li>
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-cup sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Icon Sets</span></a>
-                    <ul>
-                        <li>
-                            <a href="page_icons_fontawesome.html">Font Awesome</a>
-                        </li>
-                        <li>
-                            <a href="page_icons_glyphicons_pro.html">Glyphicons Pro</a>
-                        </li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-cube-outline"></i><span>Admin UI</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="ui-notification.html">Notification</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="ui-range-slider.html">Range Slider</a></li>
+                        <li><a href="ui-sweetalert.html">Sweet Alert</a></li>
+                        <li><a href="ui-treeview.html">Tree view</a></li>
+                        <li><a href="widgets.html">Widget</a></li>
                     </ul>
+                    <!-- /.sub-menu js__content -->
                 </li>
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-show_big_thumbnails sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Page Layouts</span></a>
-                    <ul>
-                        <li>
-                            <a href="page_layout_static.html">Static</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_fixed_footer.html">Static + Fixed Footer</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_fixed_top.html">Fixed Top Header</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_fixed_top_footer.html">Fixed Top Header + Footer</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_fixed_bottom.html">Fixed Bottom Header</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_fixed_bottom_footer.html">Fixed Bottom Header + Footer</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_main_sidebar_mini.html">Mini Main Sidebar</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_main_sidebar_partial.html">Partial Main Sidebar</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_main_sidebar_visible.html">Visible Main Sidebar</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_alternative_sidebar_partial.html">Partial Alternative
-                                Sidebar</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_alternative_sidebar_visible.html">Visible Alternative
-                                Sidebar</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_no_sidebars.html">No Sidebars</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_both_partial.html">Both Sidebars Partial</a>
-                        </li>
-                        <li>
-                            <a href="page_layout_static_animated.html">Animated Sidebar Transitions</a>
-                        </li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-buffer"></i><span>User Interface</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="ui-buttons.html">Buttons</a></li>
+                        <li><a href="ui-cards.html">Cards</a></li>
+                        <li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
+                        <li><a href="ui-components.html">Components</a></li>
+                        <li><a href="ui-draggable-cards.html">Draggable Cards</a></li>
+                        <li><a href="ui-modals.html">Modals</a></li>
+                        <li><a href="ui-typography.html">Typography</a></li>
                     </ul>
-                </li>
-                <li class="sidebar-header">
-                    <span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip"
-                                                                     title="Quick Settings"><i
-                                class="gi gi-settings"></i></a></span>
-                    <span class="sidebar-header-title">Develop Kit</span>
+                    <!-- /.sub-menu js__content -->
                 </li>
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-brush sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Ready Pages</span></a>
-                    <ul>
-                        <li>
-                            <a href="#" class="sidebar-nav-submenu"><i
-                                    class="fa fa-angle-left sidebar-nav-indicator"></i>Errors</a>
-                            <ul>
-                                <li>
-                                    <a href="page_ready_400.html">400</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_401.html">401</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_403.html">403</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_404.html">404</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_500.html">500</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_503.html">503</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="sidebar-nav-submenu"><i
-                                    class="fa fa-angle-left sidebar-nav-indicator"></i>Get Started</a>
-                            <ul>
-                                <li>
-                                    <a href="page_ready_blank.html">Blank</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_blank_alt.html">Blank Alternative</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="page_ready_search_results.html">Search Results (4)</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_article.html">Article</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_user_profile.html">User Profile</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_contacts.html">Contacts</a>
-                        </li>
-                        <li>
-                            <a href="#" class="sidebar-nav-submenu"><i
-                                    class="fa fa-angle-left sidebar-nav-indicator"></i>e-Learning</a>
-                            <ul>
-                                <li>
-                                    <a href="page_ready_elearning_courses.html">Courses</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_elearning_course_lessons.html">Course - Lessons</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_elearning_course_lesson.html">Course - Lesson Page</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="sidebar-nav-submenu"><i
-                                    class="fa fa-angle-left sidebar-nav-indicator"></i>Message Center</a>
-                            <ul>
-                                <li>
-                                    <a href="page_ready_inbox.html">Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_inbox_compose.html">Compose Message</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_inbox_message.html">View Message</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="page_ready_chat.html">Chat</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_timeline.html">Timeline</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_files.html">Files</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_tickets.html">Tickets</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_bug_tracker.html">Bug Tracker</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_tasks.html">Tasks</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_pricing_tables.html">Pricing Tables</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_invoice.html">Invoice</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_forum.html">Forum (3)</a>
-                        </li>
-                        <li>
-                            <a href="page_ready_coming_soon.html">Coming Soon</a>
-                        </li>
-                        <li>
-                            <a href="#" class="sidebar-nav-submenu"><i
-                                    class="fa fa-angle-left sidebar-nav-indicator"></i>Login, Register &amp; Lock</a>
-                            <ul>
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="login_full.html">Login (Full Background)</a>
-                                </li>
-                                <li>
-                                    <a href="login_alt.html">Login 2</a>
-                                </li>
-                                <li>
-                                    <a href="login.html#reminder">Password Reminder</a>
-                                </li>
-                                <li>
-                                    <a href="login_alt.html#reminder">Password Reminder 2</a>
-                                </li>
-                                <li>
-                                    <a href="login.html#register">Register</a>
-                                </li>
-                                <li>
-                                    <a href="login_alt.html#register">Register 2</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_lock_screen.html">Lock Screen</a>
-                                </li>
-                                <li>
-                                    <a href="page_ready_lock_screen_alt.html">Lock Screen 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <a class="waves-effect" href="inbox.html"><i class="menu-icon mdi mdi-email-outline"></i><span>Mail</span></a>
                 </li>
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="fa fa-wrench sidebar-nav-icon"></i><span
-                            class="sidebar-nav-mini-hide">Components</span></a>
-                    <ul>
-                        <li>
-                            <a href="#" class="sidebar-nav-submenu"><i
-                                    class="fa fa-angle-left sidebar-nav-indicator"></i>3 Level Menu</a>
-                            <ul>
-                                <li>
-                                    <a href="#">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Link 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="page_comp_maps.html">Maps</a>
-                        </li>
-                        <li>
-                            <a href="page_comp_charts.html">Charts</a>
-                        </li>
-                        <li>
-                            <a href="page_comp_gallery.html">Gallery</a>
-                        </li>
-                        <li>
-                            <a href="page_comp_carousel.html">Carousel</a>
-                        </li>
-                        <li>
-                            <a href="page_comp_calendar.html">Calendar</a>
-                        </li>
-                        <li>
-                            <a href="page_comp_animations.html">CSS3 Animations</a>
-                        </li>
-                        <li>
-                            <a href="page_comp_syntax_highlighting.html">Syntax Highlighting</a>
-                        </li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-pencil-box"></i><span>Forms</span><span class="notice notice-blue">7</span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="form-elements.html">General Elements</a></li>
+                        <li><a href="form-advanced.html">Advanced Form</a></li>
+                        <li><a href="form-fileupload.html">Form Uploads</a></li>
+                        <li><a href="form-validation.html">Form Validation</a></li>
+                        <li><a href="form-wizard.html">Form Wizard</a></li>
+                        <li><a href="form-wysiwig.html">Wysiwig Editors</a></li>
+                        <li><a href="form-xeditable.html">X-editable</a></li>
                     </ul>
+                    <!-- /.sub-menu js__content -->
+                </li>
+                <li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-table"></i><span>Tables</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="tables-basic.html">Basic Tables</a></li>
+                        <li><a href="tables-datatable.html">Data Tables</a></li>
+                        <li><a href="tables-responsive.html">Responsive Tables</a></li>
+                        <li><a href="tables-editable.html">Editable Tables</a></li>
+                    </ul>
+                    <!-- /.sub-menu js__content -->
+                </li>
+                <li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-book-multiple-variant"></i><span>Page</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="page-starter.html">Starter Page</a></li>
+                        <li><a href="page-login.html">Login</a></li>
+                        <li><a href="page-register.html">Register</a></li>
+                        <li><a href="page-recoverpw.html">Recover Password</a></li>
+                        <li><a href="page-lock-screen.html">Lock Screen</a></li>
+                        <li><a href="page-confirm-mail.html">Confirm Mail</a></li>
+                        <li><a href="page-404.html">Error 404</a></li>
+                        <li><a href="page-500.html">Error 500</a></li>
+                    </ul>
+                    <!-- /.sub-menu js__content -->
+                </li>
+                <li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-folder-multiple"></i><span>Extra Pages</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="extras-contact.html">Contact list</a></li>
+                        <li><a href="extras-email-template.html">Email template</a></li>
+                        <li><a href="extras-faq.html">FAQ</a></li>
+                        <li><a href="extras-gallery.html">Gallery</a></li>
+                        <li><a href="extras-invoice.html">Invoice</a></li>
+                        <li><a href="extras-maps.html">Maps</a></li>
+                        <li><a href="extras-pricing.html">Pricing</a></li>
+                        <li><a href="extras-projects.html">Projects</a></li>
+                        <li><a href="extras-taskboard.html">Taskboard</a></li>
+                        <li><a href="extras-timeline.html">Timeline</a></li>
+                        <li><a href="extras-tour.html">Tour</a></li>
+                    </ul>
+                    <!-- /.sub-menu js__content -->
                 </li>
             </ul>
-            <!-- END Sidebar Navigation -->
-
-            <!-- Sidebar Notifications -->
+            <!-- /.menu js__accordion -->
         </div>
-        <!-- END Sidebar Content -->
+        <!-- /.navigation -->
     </div>
-    <!-- END Wrapper for scrolling functionality -->
+    <!-- /.content -->
 </div>

@@ -1,263 +1,687 @@
 @extends('Admin.master')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
-            <!-- Web Server Block -->
-            <div class="block full">
-                <!-- Web Server Title -->
-                <div class="block-title">
-                    <div class="block-options pull-right">
-                        <span id="dash-chart-live-info" class="label label-primary">%</span>
-                        <span class="label label-danger animation-pulse">CPU Load</span>
-                    </div>
-                    <h2><strong>Web</strong> Server #1</h2>
+    <div class="row small-spacing">
+        <div class="col-sm-6 col-lg-3 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title text-orange">Site Traffic</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
                 </div>
-                <!-- END Web Server Title -->
-
-                <!-- Web Server Content -->
-                <!-- Flot Charts (initialized in js/pages/index2.js), for more examples you can check out http://www.flotcharts.org/ -->
-                <div id="dash-chart-live" class="chart"></div>
-                <!-- END Web Server Content -->
+                <!-- /.dropdown js__dropdown -->
+                <div class="content widget-stat">
+                    <div id="traffic-sparkline-chart-3" class="left-content"></div>
+                    <!-- /#traffic-sparkline-chart-3 -->
+                    <div class="right-content">
+                        <h2 class="counter text-danger">12</h2>
+                        <!-- /.counter -->
+                        <p class="text text-danger">Some text here</p>
+                        <!-- /.text -->
+                    </div>
+                    <!-- .right-content -->
+                </div>
+                <!-- /.content widget-stat -->
             </div>
-            <!-- END Web Server Block -->
-
-            <!-- Mini Sales Charts Block -->
-            <!-- Jquery Sparkline (initialized in js/pages/index2.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-{{--            <div class="block full">--}}
-{{--                <!-- Mini Sales Charts Title -->--}}
-{{--                <div class="block-title">--}}
-{{--                    <div class="block-options pull-right">--}}
-{{--                        <div class="btn-group btn-group-sm">--}}
-{{--                            <a href="javascript:void(0)" class="btn btn-alt btn-default dropdown-toggle"--}}
-{{--                               data-toggle="dropdown"><span class="caret"></span></a>--}}
-{{--                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">--}}
-{{--                                <li>--}}
-{{--                                    <a href="javascript:void(0)"><i class="fa fa-check pull-right"></i> This Week</a>--}}
-{{--                                    <a href="javascript:void(0)">This Month</a>--}}
-{{--                                    <a href="javascript:void(0)">This Year</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <h2><strong>Sales</strong> This Week</h2>--}}
-{{--                </div>--}}
-{{--                <!-- END Mini Sales Charts Title -->--}}
-
-{{--                <!-- Mini Sales Charts Content -->--}}
-{{--                <div class="row text-center">--}}
-{{--                    <div class="col-sm-4">--}}
-{{--                        <span id="mini-sales1">2,5,6,7,10,16,18</span>--}}
-{{--                        <h4>WP Theme</h4>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-sm-4">--}}
-{{--                        <span id="mini-sales2">5,6,8,3,11,15,35</span>--}}
-{{--                        <h4>Web App</h4>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-sm-4">--}}
-{{--                        <span id="mini-sales3">7,8,9,8,8,10,12</span>--}}
-{{--                        <h4>Icon Set</h4>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- END Mini Sales Charts Content -->--}}
-{{--            </div>--}}
-            <!-- END Mini Sales Charts Block -->
-
-            <!-- Mini Earnings Charts Block -->
-            <!-- Jquery Sparkline (initialized in js/pages/index2.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-{{--            <div class="block full">--}}
-{{--                <!-- Mini Earnings Charts Title -->--}}
-{{--                <div class="block-title">--}}
-{{--                    <div class="block-options pull-right">--}}
-{{--                        <div class="btn-group btn-group-sm">--}}
-{{--                            <a href="javascript:void(0)" class="btn btn-alt btn-default dropdown-toggle"--}}
-{{--                               data-toggle="dropdown"><span class="caret"></span></a>--}}
-{{--                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">--}}
-{{--                                <li>--}}
-{{--                                    <a href="javascript:void(0)"><i class="fa fa-check pull-right"></i> This Week</a>--}}
-{{--                                    <a href="javascript:void(0)">This Month</a>--}}
-{{--                                    <a href="javascript:void(0)">This Year</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <h2><strong>Earnings</strong> This Week</h2>--}}
-{{--                </div>--}}
-{{--                <!-- END Mini Earnings Charts Title -->--}}
-
-{{--                <!-- Mini Earnings Charts Content -->--}}
-{{--                <div class="row text-center">--}}
-{{--                    <div class="col-sm-4">--}}
-{{--                        <span id="mini-earnings1">200,500,600,700,1000,1600,1800</span>--}}
-{{--                        <h4>WP Theme</h4>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-sm-4">--}}
-{{--                        <span id="mini-earnings2">500,600,800,300,1100,1500,3500</span>--}}
-{{--                        <h4>Web App</h4>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-sm-4">--}}
-{{--                        <span id="mini-earnings3">700,800,900,800,800,1000,1200</span>--}}
-{{--                        <h4>Icon Set</h4>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- END Mini Earnings Charts Content -->--}}
-{{--            </div>--}}
-            <!-- END Mini Earnings Charts Block -->
-
-            <!-- Quick Post Block -->
-{{--            <div class="block">--}}
-{{--                <!-- Quick Post Title -->--}}
-{{--                <div class="block-title">--}}
-{{--                    <div class="block-options pull-right">--}}
-{{--                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default" data-toggle="tooltip"--}}
-{{--                           title="Post Options"><i class="fa fa-pencil"></i></a>--}}
-{{--                    </div>--}}
-{{--                    <h2><strong>Quick</strong> Post</h2>--}}
-{{--                </div>--}}
-{{--                <!-- END Quick Post Title -->--}}
-
-{{--                <!-- Quick Post Content -->--}}
-{{--                <form action="index2.html" method="post" class="form-bordered" onsubmit="return false;">--}}
-{{--                    <div class="form-group">--}}
-{{--                        <input type="text" id="qpost-title" name="qpost-title" class="form-control"--}}
-{{--                               placeholder="Enter a title..">--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <input type="text" id="qpost-tags" name="qpost-tags" class="input-tags"--}}
-{{--                               value="tutorial, learn, javascript">--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <textarea id="qpost-content" name="qpost-content" rows="11" class="form-control"--}}
-{{--                                  placeholder="Enter content.."></textarea>--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group form-actions">--}}
-{{--                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-check"></i> Publish--}}
-{{--                        </button>--}}
-{{--                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--                <!-- END Quick Post Content -->--}}
-{{--            </div>--}}
-            <!-- END Quick Post Block -->
+            <!-- /.box-content -->
         </div>
-        <div class="col-md-6">
-            <!-- Timeline Block -->
-            <div class="block">
-                <!-- Timeline Title -->
-                <div class="block-title">
-                    <div class="block-options pull-right">
-                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default" data-toggle="tooltip"
-                           title="Settings"><i class="fa fa-cog"></i></a>
-                    </div>
-                    <h2><strong>Latest</strong> News</h2>
+        <!-- /.col-sm-6 col-lg-3 col-xs-12 -->
+        <div class="col-sm-6 col-lg-3 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title text-info">Site Traffic</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
                 </div>
-                <!-- END Timeline Title -->
-
-                <!-- Timeline Content -->
-                <div class="block-content-full">
-                    <div class="timeline">
-                        <ul class="timeline-list">
-                            <li class="active">
-                                <div class="timeline-icon"><i class="gi gi-airplane"></i></div>
-                                <div class="timeline-time"><small>just now</small></div>
-                                <div class="timeline-content">
-                                    <p class="push-bit"><a href="page_ready_user_profile.html"><strong>Jordan
-                                                Carter</strong></a></p>
-                                    <p class="push-bit">The trip was an amazing and a life changing experience!!</p>
-                                    <p class="push-bit"><a href="page_ready_article.html"
-                                                           class="btn btn-xs btn-primary"><i class="fa fa-file"></i>
-                                            Read the article</a></p>
-                                    <div class="row push">
-                                        <div class="col-sm-6 col-md-4">
-                                            <a href="img/placeholders/photos/photo1.jpg" data-toggle="lightbox-image">
-                                                <img src="img/placeholders/photos/photo1.jpg" alt="image">
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <a href="img/placeholders/photos/photo22.jpg" data-toggle="lightbox-image">
-                                                <img src="img/placeholders/photos/photo22.jpg" alt="image">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="active">
-                                <div class="timeline-icon"><i class="fa fa-file-text"></i></div>
-                                <div class="timeline-time"><small>5 min ago</small></div>
-                                <div class="timeline-content">
-                                    <p class="push-bit"><a
-                                            href="page_ready_user_profile.html"><strong>Administrator</strong></a></p>
-                                    <strong>Free courses</strong> for all our customers at A1 Conference Room - 9:00
-                                    <strong>am</strong> tomorrow!
-                                </div>
-                            </li>
-                            <li class="active">
-                                <div class="timeline-icon"><i class="gi gi-drink"></i></div>
-                                <div class="timeline-time"><small>3 hours ago</small></div>
-                                <div class="timeline-content">
-                                    <p class="push-bit"><a href="page_ready_user_profile.html"><strong>Ella
-                                                Winter</strong></a></p>
-                                    <p class="push-bit"><strong>Happy Hour!</strong> Free drinks at <a
-                                            href="javascript:void(0)">Cafe-Bar</a> all day long!</p>
-                                    <div id="gmap-timeline-dash2" class="gmap" style="height: 220px;"></div>
-                                </div>
-                            </li>
-                            <li class="active">
-                                <div class="timeline-icon"><i class="fa fa-cutlery"></i></div>
-                                <div class="timeline-time"><small>yesterday</small></div>
-                                <div class="timeline-content">
-                                    <p class="push-bit"><a href="page_ready_user_profile.html"><strong>Patricia
-                                                Woods</strong></a></p>
-                                    <p class="push-bit">Today I had the lunch of my life! It was delicious!</p>
-                                    <div class="row push">
-                                        <div class="col-sm-6 col-md-4">
-                                            <a href="img/placeholders/photos/photo23.jpg" data-toggle="lightbox-image">
-                                                <img src="img/placeholders/photos/photo23.jpg" alt="image">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="active">
-                                <div class="timeline-icon"><i class="fa fa-smile-o"></i></div>
-                                <div class="timeline-time"><small>2 days ago</small></div>
-                                <div class="timeline-content">
-                                    <p class="push-bit"><a
-                                            href="page_ready_user_profile.html"><strong>Administrator</strong></a></p>
-                                    To thank you all for your support we would like to let you know that you will
-                                    receive free feature updates for life! You are awesome!
-                                </div>
-                            </li>
-                            <li class="active">
-                                <div class="timeline-icon"><i class="fa fa-pencil"></i></div>
-                                <div class="timeline-time"><small>1 week ago</small></div>
-                                <div class="timeline-content">
-                                    <p class="push-bit"><a href="page_ready_user_profile.html"><strong>Nicole
-                                                Ward</strong></a></p>
-                                    <p class="push-bit">Consectetur adipiscing elit. Maecenas ultrices, justo vel
-                                        imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus.
-                                        Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.
-                                        Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci,
-                                        eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque
-                                        vulputate.</p>
-                                    Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et
-                                    lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus
-                                    nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus
-                                    facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante
-                                    sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed
-                                    at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula
-                                    ipsum.
-                                </div>
-                            </li>
-                            <li class="text-center">
-                                <a href="javascript:void(0)" class="btn btn-xs btn-default">View more..</a>
-                            </li>
-                        </ul>
+                <!-- /.dropdown js__dropdown -->
+                <div class="content widget-stat">
+                    <div id="traffic-sparkline-chart-1" class="left-content margin-top-15"></div>
+                    <!-- /#traffic-sparkline-chart-1 -->
+                    <div class="right-content">
+                        <h2 class="counter text-info">278</h2>
+                        <!-- /.counter -->
+                        <p class="text text-info">Some text here</p>
+                        <!-- /.text -->
                     </div>
+                    <!-- .right-content -->
                 </div>
-                <!-- END Timeline Content -->
+                <!-- /.content widget-stat -->
             </div>
-            <!-- END Timeline Block -->
+            <!-- /.box-content -->
         </div>
+        <!-- /.col-sm-6 col-lg-3 col-xs-12 -->
+
+        <div class="col-sm-6 col-lg-3 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title text-success">Site Traffic</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <div class="content widget-stat">
+                    <div id="traffic-sparkline-chart-2" class="left-content margin-top-10"></div>
+                    <!-- /#traffic-sparkline-chart-2 -->
+                    <div class="right-content">
+                        <h2 class="counter text-success">36%</h2>
+                        <!-- /.counter -->
+                        <p class="text text-success">Some text here</p>
+                        <!-- /.text -->
+                    </div>
+                    <!-- .right-content -->
+                </div>
+                <!-- /.content widget-stat -->
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-4 col-xs-12 -->
+
+        <div class="col-sm-6 col-lg-3 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title text-orange">Site Traffic</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <div class="content widget-stat">
+                    <div id="traffic-sparkline-chart-3-custom" class="left-content"></div>
+                    <!-- /#traffic-sparkline-chart-3 -->
+                    <div class="right-content">
+                        <h2 class="counter text-orange">849 <i class="fa fa-angle-double-up"></i></h2>
+                        <!-- /.counter -->
+                        <p class="text text-orange">Some text here</p>
+                        <!-- /.text -->
+                    </div>
+                    <!-- .right-content -->
+                </div>
+                <!-- /.content widget-stat -->
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-sm-6 col-lg-3 col-xs-12 -->
     </div>
+    <!-- .row -->
+    <div class="row small-spacing">
+        <div class="col-lg-6 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title">Activity</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <canvas id="bar-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
+                <!-- /#bar-chartjs-chart.chartjs-chart -->
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-xs-12 -->
+        <div class="col-lg-6 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title">Sales</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <canvas id="donut-chartjs-chart" class="chartjs-chart" width="475" height="316"></canvas>
+                <!-- /#donut-chartjs-chart.chartjs-chart -->
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-xs-12 -->
+    </div>
+    <!-- .row -->
+    <div class="row small-spacing">
+        <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="box-content bg-success text-white">
+                <div class="statistics-box with-icon">
+                    <i class="ico small fa fa-diamond"></i>
+                    <p class="text text-white">SUCCESS</p>
+                    <h2 class="counter">72943</h2>
+                </div>
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 col-xs-12 -->
+        <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="box-content bg-info text-white">
+                <div class="statistics-box with-icon">
+                    <i class="ico small fa fa-download"></i>
+                    <p class="text text-white">DOWNLOAD</p>
+                    <h2 class="counter">6382</h2>
+                </div>
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 col-xs-12 -->
+        <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="box-content bg-danger text-white">
+                <div class="statistics-box with-icon">
+                    <i class="ico small fa fa-bug"></i>
+                    <p class="text text-white">FIXED BUG</p>
+                    <h2 class="counter">12564</h2>
+                </div>
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 col-xs-12 -->
+        <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="box-content bg-warning text-white">
+                <div class="statistics-box with-icon">
+                    <i class="ico small fa fa-usd"></i>
+                    <p class="text text-white">SALES</p>
+                    <h2 class="counter">2,637</h2>
+                </div>
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 col-xs-12 -->
+    </div>
+    <!-- .row -->
+
+    <div class="row small-spacing">
+        <div class="col-lg-4 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title">Last Reviews</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <div class="review-list">
+                    <div class="review-item">
+                        <div class="top">
+                            <div class="name">John Doe</div>
+                            <!-- /.name -->
+                            <div class="date">10 min</div>
+                            <!-- /.date -->
+                            <div class="star-rating text-warning">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <!-- /.star-rating -->
+                        </div>
+                        <!-- /.top -->
+                        <div class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere, impedit facere.</div>
+                        <!-- /.desc -->
+                    </div>
+                    <!-- /.review-item -->
+                    <div class="review-item">
+                        <div class="top">
+                            <div class="name">Harry Halen</div>
+                            <!-- /.name -->
+                            <div class="date">15 min</div>
+                            <!-- /.date -->
+                            <div class="star-rating text-warning">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <!-- /.star-rating -->
+                        </div>
+                        <!-- /.top -->
+                        <div class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere, impedit facere.</div>
+                        <!-- /.desc -->
+                    </div>
+                    <!-- /.review-item -->
+                    <div class="review-item">
+                        <div class="top">
+                            <div class="name">Thomas Taylor</div>
+                            <!-- /.name -->
+                            <div class="date">30 min</div>
+                            <!-- /.date -->
+                            <div class="star-rating text-warning">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <!-- /.star-rating -->
+                        </div>
+                        <!-- /.top -->
+                        <div class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere, impedit facere.</div>
+                        <!-- /.desc -->
+                    </div>
+                    <!-- /.review-item -->
+                    <div class="review-item">
+                        <div class="top">
+                            <div class="name">Helen Candy</div>
+                            <!-- /.name -->
+                            <div class="date">1 hour ago</div>
+                            <!-- /.date -->
+                            <div class="star-rating text-warning">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <!-- /.star-rating -->
+                        </div>
+                        <!-- /.top -->
+                        <div class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere, impedit facere.</div>
+                        <!-- /.desc -->
+                    </div>
+                    <!-- /.review-item -->
+                    <div class="review-item">
+                        <div class="top">
+                            <div class="name">Henny Betty</div>
+                            <!-- /.name -->
+                            <div class="date">1 day ago</div>
+                            <!-- /.date -->
+                            <div class="star-rating text-warning">
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <!-- /.star-rating -->
+                        </div>
+                        <!-- /.top -->
+                        <div class="desc">Amet odio neque nobis consequuntur consequatur a quae, impedit facere, impedit facere.</div>
+                        <!-- /.desc -->
+                    </div>
+                    <!-- /.review-item -->
+                </div>
+                <!-- /.review-list -->
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-4 col-xs-12 -->
+        <div class="col-lg-4 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title">Activity</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="bar bg-primary">
+                            <div class="dot bg-primary"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">10 min</div>
+                            <!-- /.date -->
+                            <div class="text">
+                                Harry has finished "Amaza HTML" task
+                            </div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                    <div class="activity-item">
+                        <div class="bar bg-danger">
+                            <div class="dot bg-danger"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">15 min</div>
+                            <!-- /.date -->
+                            <div class="text">
+                                You completed your task
+                            </div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                    <div class="activity-item">
+                        <div class="bar bg-success">
+                            <div class="dot bg-success"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">30 min</div>
+                            <!-- /.date -->
+                            <div class="text">
+                                New updated has been installed
+                            </div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                    <div class="activity-item">
+                        <div class="bar bg-violet">
+                            <div class="dot bg-violet"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">1 hour ago</div>
+                            <!-- /.date -->
+                            <div class="text">Write some comments</div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                    <div class="activity-item">
+                        <div class="bar bg-warning">
+                            <div class="dot bg-warning"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">1 day ago</div>
+                            <!-- /.date -->
+                            <div class="text">4 friends request accepted</div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                    <div class="activity-item">
+                        <div class="bar bg-orange">
+                            <div class="dot bg-orange"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">6 days ago</div>
+                            <!-- /.date -->
+                            <div class="text">Betty has joined your team</div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                    <div class="activity-item">
+                        <div class="bar bg-orange">
+                            <div class="dot bg-orange"></div>
+                            <div class="last-dot bg-orange"></div>
+                            <!-- /.dot -->
+                        </div>
+                        <!-- /.bar -->
+                        <div class="content">
+                            <div class="date">12 days ago</div>
+                            <!-- /.date -->
+                            <div class="text">Daisy has joined your team</div>
+                            <!-- /.text -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.activity-item -->
+                </div>
+                <!-- /.activity-list -->
+                <a href="#" class="activity-link">View all activity <i class="fa fa-angle-down"></i></a>
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-4 col-xs-12 -->
+        <div class="col-lg-4 col-xs-12">
+            <div class="box-content js__todo_widget">
+                <h4 class="box-title">Todo</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <div class="todo-list js__todo_list">
+                    <div class="todo-item">
+                        <div class="checkbox"><input type="checkbox" id="todo-1"><label for="todo-1">Task To Do 1</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox primary"><input type="checkbox" id="todo-2"><label for="todo-2">Task To Do 2</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox info"><input type="checkbox" checked id="todo-3"><label for="todo-3">Task To Do 3</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox success"><input type="checkbox" id="todo-4"><label for="todo-4">Task To Do 4</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox danger"><input type="checkbox" checked id="todo-5"><label for="todo-5">Task To Do 5</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox success"><input type="checkbox" id="todo-6"><label for="todo-6">Task To Do 6</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox success"><input type="checkbox" id="todo-7"><label for="todo-7">Task To Do 7</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox success"><input type="checkbox" id="todo-8"><label for="todo-8">Task To Do 8</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                    <div class="todo-item">
+                        <div class="checkbox success"><input type="checkbox" id="todo-9"><label for="todo-9">Task To Do 9</label></div>
+                        <!-- /.checkbox -->
+                    </div>
+                    <!-- /.todo-item -->
+                </div>
+                <!-- /.todo-list -->
+                <div class="todo-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Add new task" class="form-control js__todo_value">
+                        <div class="input-group-btn"><button type="button" class="btn btn-success no-border text-white js__todo_button waves-effect waves-light"><i class="fa fa-plus"></i></button></div>
+                        <!-- /.input-group-btn -->
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+                <!-- /.todo-form -->
+            </div>
+            <!-- /.box-content .js__todo_form -->
+        </div>
+        <!-- /.col-lg-4 col-xs-12 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row small-spacing">
+        <div class="col-lg-6 col-xs-12">
+            <div class="box-content">
+                <div id="calendar-widget"></div>
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-6 col-xs-12 -->
+        <div class="col-lg-6 col-xs-12">
+            <div class="box-content">
+                <h4 class="box-title">Purchases</h4>
+                <!-- /.box-title -->
+                <div class="dropdown js__drop_down">
+                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else there</a></li>
+                        <li class="split"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                    <!-- /.sub-menu -->
+                </div>
+                <!-- /.dropdown js__dropdown -->
+                <table class="table table-striped margin-bottom-10 table-purchases">
+                    <thead>
+                    <tr>
+                        <th style="width:40%;">Product</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>State</th>
+                        <th style="width:5%;"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Amaza Themes</td>
+                        <td>$71</td>
+                        <td>Nov 12,2016</td>
+                        <td class="text-success">Completed</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Macbook</td>
+                        <td>$142</td>
+                        <td>Nov 10,2016</td>
+                        <td class="text-danger">Cancelled</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Samsung TV</td>
+                        <td>$200</td>
+                        <td>Nov 01,2016</td>
+                        <td class="text-warning">Pending</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Ninja Admin</td>
+                        <td>$200</td>
+                        <td>Oct 28,2016</td>
+                        <td class="text-warning">Pending</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Galaxy Note 5</td>
+                        <td>$200</td>
+                        <td>Oct 28,2016</td>
+                        <td class="text-success">Completed</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>CleanUp Themes</td>
+                        <td>$71</td>
+                        <td>Oct 22,2016</td>
+                        <td class="text-success">Completed</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Facebook WP Plugin</td>
+                        <td>$10</td>
+                        <td>Oct 15,2016</td>
+                        <td class="text-success">Completed</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Iphone 7</td>
+                        <td>$100</td>
+                        <td>Oct 12,2016</td>
+                        <td class="text-warning">Pending</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Nova House</td>
+                        <td>$100</td>
+                        <td>Oct 12,2016</td>
+                        <td class="text-warning">Pending</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Repair Cars</td>
+                        <td>$35</td>
+                        <td>Oct 12,2016</td>
+                        <td class="text-warning">Pending</td>
+                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- /.table -->
+            </div>
+            <!-- /.box-content -->
+        </div>
+        <!-- /.col-lg-6 col-xs-12 -->
+    </div>
+    <!-- /.row -->
+    @include('Admin.partials.footer')
 @endsection
