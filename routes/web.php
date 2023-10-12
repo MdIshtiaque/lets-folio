@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\TemplateController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('admin/templates', [TemplateController::class, 'templateList'])->name('admin.templateList');
+    Route::get('admin/templates/view/{path}', [TemplateController::class, 'templateView'])->name('admin.templateView');
 });
 
 require __DIR__ . '/auth.php';

@@ -12,6 +12,6 @@ class DashboardController extends Controller
 {
     public function dashboard(): View
     {
-        return view('Admin.pages.dashboard');
+        return view('Admin.pages.dashboard', ['title' => 'Dashboard']);
     }
 }

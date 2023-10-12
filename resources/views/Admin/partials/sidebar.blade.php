@@ -8,8 +8,10 @@
 
         <div class="navigation">
             <ul class="menu js__accordion">
-                <li class="current">
-                    <a class="waves-effect" href="index.html"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                <li class="{{ request()->routeIs('admin.dashboard') ? 'current' : '' }}">
+                    <a class="waves-effect" href="{{ route('admin.dashboard') }}"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                </li><li class="{{ request()->routeIs('admin.templateList') ? 'current' : '' }}">
+                    <a class="waves-effect" href="{{ route('admin.templateList') }}"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Templates</span></a>
                 </li>
                 <li>
                     <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-flower"></i><span>Icons</span><span class="menu-arrow fa fa-angle-down"></span></a>
