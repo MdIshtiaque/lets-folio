@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\TemplateController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -34,6 +35,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('admin/templates', [TemplateController::class, 'templateList'])->name('admin.templateList');
     Route::get('admin/templates/view/{path}', [TemplateController::class, 'templateView'])->name('admin.templateView');
+
+    Route::get('admin/templates/information-entry/{template}', [InformationController::class, 'entry'])->name('information.entry');
 });
 
 require __DIR__ . '/auth.php';

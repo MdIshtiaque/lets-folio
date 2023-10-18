@@ -45,10 +45,10 @@
                                     </a>
                                 </td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-primary btn-xs waves-effect waves-light"><i
+                                    <a href="{{ route('information.entry', ['template' => $template->id]) }}" type="button" class="btn btn-primary btn-xs waves-effect waves-light"><i
                                             class="mdi mdi-plus-circle-multiple-outline" style="padding-right: 10px"></i>Information
                                         Entry
-                                    </button>
+                                    </a>
                                 </td>
                                 <td class="text-center">
                                     <button type="button" class="btn btn-warning btn-xs waves-effect waves-light"><i

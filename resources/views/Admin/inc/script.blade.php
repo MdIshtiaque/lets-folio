@@ -41,3 +41,5 @@
 <script src="{{ asset('assets/plugin/datatables/extensions/Responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('assets/plugin/datatables/extensions/Responsive/js/responsive.bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/scripts/datatables.demo.min.js') }}"></script>
+
+@stack('js')
