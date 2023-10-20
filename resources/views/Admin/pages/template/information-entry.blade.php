@@ -29,7 +29,10 @@
                         <div class="progress-bar active progress-bar-success progress-bar-striped bar"></div>
                     </div>
                     <div class="tab-pane" id="tab-progress-1">
-                        @include('Admin.pages.template.informations.basic')
+                        <form action="#" method="POST" id="basic" data-route="{{ route('basicInformation.submit') }}" enctype="multipart/form-data">
+                            @csrf
+                                @include('Admin.pages.template.informations.basic')
+                        </form>
                     </div>
                     <div class="tab-pane" id="tab-progress-2">
                         <p>Howdy, I'm in Section 2.</p>
@@ -64,4 +67,46 @@
     <script src="{{ asset('assets/scripts/form.wizard.init.min.js') }}"></script>
     <!-- Datepicker -->
     <script src="{{ asset('assets/plugin/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#next').click((e) => {
+                e.preventDefault();
+
+                let activeTab = $('.tab-content .active');
+                let formId = activeTab.find('form').attr('id');
+                let route = $(`#${formId}`).data('route');
+                let formData = new FormData($(`#${formId}`)[0]);
+
+                //TODO :: need to implement jquery validation
+                $.ajax({
+                    url: route,
+                    type: 'POST',
+                    data: formData,
+                    contentType: false, // Important for files
+                    processData: false, // Important for files
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  // For Laravel CSRF protection
+                    },
+                    success: function(response) {
+                        if(response.success) {
+                            // Move to the next tab
+                            let nextTab = activeTab.next('.tab-pane');
+                            if (nextTab.length) {
+                                nextTab.addClass('active');
+                                activeTab.removeClass('active');
+                            }
+                            //TODO :: need to Fix the toastr
+                            toastr.success('Data has been saved successfully!', 'Congrats');
+                        } else {
+                            toastr.error('Oops! Something went wrong!');
+                        }
+                    },
+                    error: function() {
+                        toastr.error('Oops! Something went wrong!');
+                    }
+                });
+            });
+        });
+    </script>
 @endpush

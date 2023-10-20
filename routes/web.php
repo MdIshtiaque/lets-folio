@@ -37,6 +37,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('admin/templates/view/{path}', [TemplateController::class, 'templateView'])->name('admin.templateView');
 
     Route::get('admin/templates/information-entry/{template}', [InformationController::class, 'entry'])->name('information.entry');
+
+    Route::post('information-entry/basic', [InformationController::class, 'basicInformationSave'])->name('basicInformation.submit');
 });
 
 require __DIR__ . '/auth.php';
